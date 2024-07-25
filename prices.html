@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zantrix Cloud Hosting Plans</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        header {
+            background-color: #16a085;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .main {
+            padding: 20px;
+        }
+
+        .billing-plans {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .plan {
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            flex: 1;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            margin-bottom: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .features li {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        .free-plan {
+            background-color: #f1c40f; /* Yellow color */
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zantrix Cloud Hosting Plans</h1>
+        <!-- Navigation links if needed -->
+    </header>
+
+    <main>
+        <div class="billing-plans">
+            <div class="plan free-plan">
+                <h2>Free</h2>
+                <ul class="features">
+                    <li>500 MB Storage</li>
+                    <li>5 GB Bandwidth</li>
+                    <li>1 Domain</li>
+                </ul>
+                <p class="price">Free Forever</p>
+                <button>Select Plan</button>
+            </div>
+            <div class="plan" style="background-color: #27ae60;">
+                <h2>Starter</h2>
+                <ul class="features">
+                    <li>1 GB Storage</li>
+                    <li>10 GB Bandwidth</li>
+                    <li>1 Domain</li>
+                </ul>
+                <p class="price">$5/month</p>
+                <button>Select Plan</button>
+            </div>
+            <!-- Add more plans as needed -->
+            <div class="plan" style="background-color: #8e44ad;">
+                <h2>Pro</h2>
+                <ul class="features">
+                    <li>10 GB Storage</li>
+                    <li>100 GB Bandwidth</li>
+                    <li>5 Domains</li>
+                </ul>
+                <p class="price">$10/month</p>
+                <button>Select Plan</button>
+            </div>
+            <div class="plan" style="background-color: #3498db;">
+                <h2>Business</h2>
+                <ul class="features">
+                    <li>100 GB Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>Unlimited Domains</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <p class="price">$20/month</p>
+                <button>Select Plan</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

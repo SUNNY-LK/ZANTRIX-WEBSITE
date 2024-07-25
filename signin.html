@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+          background-image: url('https://telegra.ph/file/1b379e361d9ff0f16e437.jpg'); /* Desktop background image */
+          background-size: cover;
+          background-repeat: no-repeat;
+      }
+
+      /* Media query for mobile devices (max-width: 768px) */
+      @media only screen and (max-width: 768px) {
+          body {
+              background-image: url('https://i.pinimg.com/564x/e0/4e/60/e04e6097fc28b52cfe3f04b8b2c7b8b6.jpg'); /* Mobile background image */
+          }
+      }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+      .signin-box {
+          position: relative; /* Required for positioning the pseudo-element */
+          background-color: rgba(128, 128, 128, 0.5); /* Transparent grey color */
+          padding: 20px;
+          border-radius: 12px; /* Increased border radius */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          max-width: 350px;
+          width: 100%;
+          margin-bottom: 20px;
+          margin: 0 auto;
+          color: white; /* Set font color to white */
+      }
+
+        .signin-box h2 {
+            margin-bottom: 20px;
+            color: white; /* Changed heading color to a dark grey */
+        }
+
+        .signin-box label {
+            display: block;
+            margin-bottom: 10px;
+            color: white; /* Changed label color to a light grey */
+        }
+
+        .signin-box input[type="email"],
+        .signin-box input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px; /* Increased margin bottom */
+            border: 1px solid #d8d8d8; /* Changed border color to a lighter grey */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .signin-box button {
+            background-color: #008cff; /* Changed button color to Heroku blue */
+            color: #fff;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .signin-box button:hover {
+            background-color: #007acc; /* Darker shade of blue on hover */
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+      footer {
+          color: white; /* Changed text color to black */
+          padding: 20px 0;
+          text-align: center;
+      }
+
+      .footer-content {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+
+      .footer-left,
+      .footer-right {
+          flex: 1;
+      }
+
+      .footer-left h3,
+      .footer-right h3 {
+          color: white; /* Changed heading color to black */
+          margin-bottom: 10px;
+      }
+
+      .footer-right address {
+          color: white; /* Changed address color to black */
+          font-style: normal;
+          line-height: 1.6;
+      }
+
+      .footer-right a {
+          color: white; /* Changed link color to black */
+          text-decoration: none;
+      }
+
+      .footer-right a:hover {
+          text-decoration: underline;
+      }
+
+      .footer-bottom {
+          margin-top: 20px;
+      }
+
+      .footer-bottom p {
+          margin: 0;
+          font-size: 14px;
+      }
+
+      .signup-logo {
+          width: 50px; /* Adjust the size as needed */
+          height: auto;
+          margin-bottom: 20px; /* Add margin to separate the logo from other elements */
+      }
+
+        .signup-logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto;
+            margin-bottom: 20px; /* Add margin to separate the logo from other elements */
+        }
+      
+      .header h1 {
+          color: white;
+      }
+
+
+      .header {
+          width: 90%;
+          background: rgba(0, 0, 0, 0.5);
+          text-align: center;
+          border-radius: 10px; 
+      }
+
+      .header a {
+          color: #fff;
+          text-decoration: none;
+          margin: 0 20px;
+          font-size: 1.2em;
+      }
+    </style>
+</head>
+<body>
+ <br><br><br><br><br><br><br><br><br>
+ 
+  <div class="header">
+    <h1>Zantrix</h1>
+  </div>
+
+  <div class="header">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="prices.html">Prices</a>
+  </div>
+  
+    <div class="container">
+        <div class="signin-box">
+            <img src="https://telegra.ph/file/e471f277faf12568da15c.jpg" alt="Logo" class="signup-logo">
+            <h2>Sign In</h2>
+            <label for="signinEmail">Email:</label><br>
+            <input type="email" id="signinEmail" required><br>
+            <label for="signinPassword">Password:</label><br>
+            <input type="password" id="signinPassword" required><br>
+            <span id="errorMessage" class="error-message"></span><br>
+            <button onclick="signIn()">Sign In</button>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>About Us</h3>
+                    <p>Zantrix is a userbot cloud hosting service.</p>
+                </div>
+                <div class="footer-right">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <a href="mailto:info@example.com">info@example.com</a>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zantrix. All rights reserved. | Powered by Sachibot, Saviya-MD, and Prabath-MD</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function signIn() {
+            var email = document.getElementById("signinEmail").value.trim();
+            var password = document.getElementById("signinPassword").value.trim();
+
+            // Retrieve user data from localStorage
+            var storedEmail = localStorage.getItem("userEmail");
+            var storedPassword = localStorage.getItem("userPassword");
+
+            if (email === storedEmail && password === storedPassword) {
+                alert("Sign in successful!");
+                // Redirect to desired page
+                window.location.href = "dashboard.html";
+            } else {
+                document.getElementById("errorMessage").innerText = "Incorrect email or password.";
+            }
+        }
+    </script>
+
+</body>
+</html>

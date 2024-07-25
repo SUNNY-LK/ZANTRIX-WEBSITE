@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabath-md-deploy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/suhail.png">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 60%;
+            padding: 5%;
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+            text-align: center;
+        }
+
+        .login-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .login-box a:hover {
+            background: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #800080, /* Purple color */
+                0 0 25px #800080, /* Purple color */
+                0 0 50px #800080, /* Purple color */
+                0 0 100px #800080; /* Purple color */
+        }
+
+        .login-box a span {
+            position: absolute;
+            display: block;
+        }
+
+        .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+            50%,100% {
+                left: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: .25s
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+            50%,100% {
+                top: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: .5s
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+            50%,100% {
+                right: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: .75s
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+            50%,100% {
+                bottom: 100%;
+            }
+        }
+
+        #log-box {
+            display: none;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Please Fill The Vars To Deploy Prabath-md</h2>
+        <input type="text" id="githubUsername" placeholder="GitHub Username" required />
+        <input type="text" id="githubAuthToken" placeholder="GitHub Auth Token" required />
+        <input type="text" id="botNumber" placeholder="Bot Number" required />
+        <input type="text" id="sessionId" placeholder="Session ID" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <a onclick="deploy();" id="deployButton">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            DEPLOY
+        </a>
+        <div id="log-box"></div>
+    </div>
+
+    <script>
+        function deploy() {
+            const githubUsername = document.getElementById("githubUsername").value;
+            const githubAuthToken = document.getElementById("githubAuthToken").value;
+            const botNumber = document.getElementById("botNumber").value;
+            const sessionId = document.getElementById("sessionId").value;
+            const password = document.getElementById("password").value;
+
+            if (githubUsername.trim() === "" || githubAuthToken.trim() === "" || botNumber.trim() === "" || sessionId.trim() === "" || password.trim() === "") {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            try {
+                // Scroll down to the log box
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+
+                // Display log box
+                document.getElementById("log-box").style.display = "block";
+
+                // Show deployment message
+                document.getElementById("log-box").innerText = "Prabath-md deploying started...";
+
+                // Open test.html in a new tab/window (dummy action)
+                // window.open('test.html', '_blank');
+            } catch (error) {
+                alert('Error: Unable to deploy');
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zantrix</title>
+    <style>
+        /* CSS for basic layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#141e30, #243b55);
+            color: #eee;
+        }
+        header {
+            background: linear-gradient(#141e30, #243b55);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #141e30;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color:  #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #03e9f4;
+        }
+        section {
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        article {
+            background-color: #141e30;
+            border-radius: 20px;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        article:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #fff;
+        }
+        p {
+            color: #ccc;
+        }
+        /* Animation for circular movement */
+        .login-box a span {
+            position: relative;
+            display: inline-block;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: btn-anim 1s linear infinite;
+        }
+
+        @keyframes btn-anim {
+            0% {
+                bottom: -100%;
+            }
+            50%, 100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zantrix</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="prices.html">Prices</a>
+
+    </nav>
+    <section>
+        <article>
+            <h2>Introduction to Zantrix</h2>
+            <p>Zantrix is a leading technology company specializing in innovative solutions for businesses of all sizes. From web development to AI-powered applications, we strive to deliver excellence in every project.</p>
+        </article>
+        <article>
+            <h2>The Future of AI in Business</h2>
+            <p>Artificial Intelligence is revolutionizing the way businesses operate. In this article, we explore the impact of AI on various industries and discuss its potential for driving growth and efficiency.</p>
+        </article>
+        <article>
+            <h2>Enhancing User Experience with Design</h2>
+            <p>Good design is essential for creating memorable user experiences. Learn how Zantrix's design principles can help elevate your digital presence and engage your audience effectively.</p>
+        </article>
+        <article class="article">
+            <h2>Maximizing ROI with Digital Marketing</h2>
+            <p>Unlock the power of digital marketing strategies to reach your target audience and achieve impressive returns on investment. Discover how Zantrix can help you optimize your marketing efforts for success.</p>
+        </article>
+    </section>
+
+    <!-- JavaScript for animation -->
+    <script>
+        // JavaScript animations can be added here if needed
+    </script>
+</body>
+</html>
