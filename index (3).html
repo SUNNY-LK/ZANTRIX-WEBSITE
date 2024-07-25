@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+      /* Default background image for desktop */
+      body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+          background-image: url('https://telegra.ph/file/1b379e361d9ff0f16e437.jpg'); /* Desktop background image */
+          background-size: cover;
+          background-repeat: no-repeat;
+      }
+
+      /* Media query for mobile devices (max-width: 768px) */
+      @media only screen and (max-width: 768px) {
+          body {
+              background-image: url('https://i.pinimg.com/564x/e0/4e/60/e04e6097fc28b52cfe3f04b8b2c7b8b6.jpg'); /* Mobile background image */
+          }
+      }
+
+
+      .signup-box {
+          position: relative; /* Required for positioning the pseudo-element */
+          background-color: rgba(128, 128, 128, 0.5); /* Transparent grey color */
+          padding: 20px;
+          border-radius: 12px; /* Increased border radius */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          max-width: 350px;
+          width: 100%;
+          margin-bottom: 20px;
+          margin: 0 auto;
+          color: white; /* Set font color to white */
+      }
+
+      
+
+
+
+
+        .signup-box h2 {
+            margin-bottom: 20px;
+            color: white; /* Changed heading color to a dark grey */
+        }
+
+        .signup-box label {
+            display: block;
+            margin-bottom: 10px;
+            color: white; /* Changed label color to a light grey */
+        }
+
+        .signup-box input[type="email"],
+        .signup-box input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px; /* Increased margin bottom */
+            border: 1px solid #d8d8d8; /* Changed border color to a lighter grey */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .signup-box button {
+            background-color: #008cff; /* Changed button color to Heroku blue */
+            color: #fff;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .signup-box button:hover {
+            background-color: #007acc; /* Darker shade of blue on hover */
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .signin-link {
+            margin-top: 20px; /* Added margin-top */
+            color: white; /* Heroku blue */
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signin-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: white; /* Changed footer text color to a light grey */
+        }
+
+        footer {
+            color: white; /* Changed text color to black */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left,
+        .footer-right {
+            flex: 1;
+        }
+
+        .footer-left h3,
+        .footer-right h3 {
+            color: white; /* Changed heading color to black */
+            margin-bottom: 10px;
+        }
+
+        .footer-right address {
+            color: white /* Changed address color to black */
+            font-style: normal;
+            line-height: 1.6;
+        }
+
+        .footer-right a {
+            color: white; /* Changed link color to black */
+            text-decoration: none;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .signup-logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto;
+            margin-bottom: 20px; /* Add margin to separate the logo from other elements */
+        }
+
+      .header h1 {
+          color: white;
+      }
+
+
+      .header {
+          width: 90%;
+          background: rgba(0, 0, 0, 0.5);
+          text-align: center;
+          border-radius: 10px; 
+      }
+
+      .header a {
+          color: #fff;
+          text-decoration: none;
+          margin: 0 20px;
+          font-size: 1.2em;
+      }
+      
+    </style>
+</head>
+
+<body>
+  <br><br><br><br><br><br><br><br><br>
+<div class="header">
+    <h1>Zantrix</h1>
+</div>
+  <div class="header">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="prices.html">Prices</a>
+  </div>
+  <br>
+<div class="signup-box">
+    <img src="https://telegra.ph/file/e471f277faf12568da15c.jpg" alt="Logo" class="signup-logo"> <!-- Add this line -->
+    <h2>Create your account</h2>
+    <label for="signupEmail">Email:</label>
+    <input type="email" id="signupEmail" required>
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" required>
+    <span id="errorMessage" class="error-message"></span>
+    <button onclick="signUp()">Sign Up for Free</button>
+</div>
+
+<a href="signin.html" class="signin-link">Already have an account? Sign in</a>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <h3>About Us</h3>
+            <p>Zantrix is a userbot cloud hosting service.</p>
+        </div>
+        <div class="footer-right">
+            <h3>Contact Us</h3>
+            <address>
+                <a href="mailto:info@example.com">info@example.com</a>
+            </address>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Zantrix. All rights reserved. | Powered by Sachibot, Saviya-MD, and Prabath-MD</p>
+    </div>
+</footer>
+
+<script>
+    function signUp() {
+        var email = document.getElementById("signupEmail").value.trim();
+        var password = document.getElementById("signupPassword").value.trim();
+
+        // Check if email ends with "@gmail.com"
+        if (!email.endsWith("@gmail.com")) {
+            document.getElementById("errorMessage").innerText = "Please enter a valid Gmail address.";
+            return;
+        }
+
+        if (email === "" || password === "") {
+            document.getElementById("errorMessage").innerText = "Please fill in both email and password.";
+            return;
+        }
+
+        // Store the user data in localStorage
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+
+        alert("Sign up successful!");
+        // Redirect to sign-in page
+        window.location.href = "signin.html";
+    }
+</script>
+</body>
+</html>
